@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 mText.setCursorVisible(false);
                 mText.clearFocus();
                 Log.e("fxj","before");
-//                mText.setFocusableInTouchMode(false);
+               mText.setFocusableInTouchMode(false);
                 mText.setFocusable(false);
                 Log.e("fxj","after");
 //
