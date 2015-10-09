@@ -2,7 +2,7 @@
 
 1 想要知道我们的对某个控件焦点的设置有咩有变化，可以通过设置监听焦点改变监听器，重写onFocusChange。
 2.当仅设置setFoucusable时候，在他false后，就再也不能获得它的焦点了。也就是从此失去了焦点，例如下面的 ，如果都把去掉，点击image2 再也不会去打印focus.
-
+![image](https://github.com/franlisa/EditTextFocusTest/blob/master/1.png)
 3.当只设置setFocusInTouchmode时候，那么点击image  怎么也不会打印 not focus，也就是再也不能去改变焦点。
 所以要能保证能够自由切换获取焦点/失去焦点，在设置获取焦点时候一定要
 mText.setFocusable(true);
