@@ -9,7 +9,10 @@ mText.setFocusable(true);
  mText.setFocusableInTouchMode(true);
 同时设置，
 在设置失去焦点时候，设置了mText.setFocusable(false);则该view已经不能获得焦点，所以后面再加上clearFocus根本就没有用，但是如果在mText.setFocusable(false)前先clearFocus，那么点击image可以看到如下打印。所以clearFocus是清除该view 的焦点，同时，它会将焦点移给从顶开始第一个可以获得焦点的view，when a View clears focus the framework is trying to give focus to the first focusable View from the top而因为我们的布局第一个可以获得焦点的刚好是该EditText，所以该view放弃了焦点后又被动的获取了焦点，所以先打印了not focused再打印了focused\
+![image](https://github.com/franlisa/EditTextFocusTest/blob/master/2.png)
 
 我们还可以这样验证，在该EditText前再加个EditText，并对新加的EditText设置焦点变化监听器，可以看到mText.clearFocus时候，焦点被新加入的EditText获取了焦点。
+![image](https://github.com/franlisa/EditTextFocusTest/blob/master/3.png)
 
 注意，这里是从整个布局的顶部开始，不是从放弃焦点的该view所在的layout，例如，我们再把整体的布局变成2个layout,再原有基础之前上加上新的一层线性布局，可以看到，焦点移到新加入的这层顶部布局里的eidtView了。
+![image](https://github.com/franlisa/EditTextFocusTest/blob/master/4.png)
