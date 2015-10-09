@@ -1,56 +1,6 @@
 # EditTextFocusTest关于EditText获取/失去焦点
- mText =(EditText)findViewById(R.id.searchEdit);
- mText.setOnFocusChangeListener(new android.view.View.
-                OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                
-                    Log.e("fxj", "focused");
-                
-                } else {
-                    // 此处为失去焦点时的处理内容
-               
-                    Log.e("fxj", "not focused ");
-                }
-            }
-        });
-        mText.setCursorVisible(true);
-        mText.setFocusable(true);
-       mText.setFocusableInTouchMode(true);
-        mText.requestFocus();
 
-
-        image =(ImageView)findViewById(R.id.image);
-        image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mText.setCursorVisible(false);
-
-                Log.e("fxj","before");
-//                mText.setFocusableInTouchMode(false);
-                mText.setFocusable(false);
-                Log.e("fxj","after");
-//                mText.clearFocus();
-
-
-
-//               image.requestFocus();
-            }
-
-        });
-        image2=(ImageView)findViewById(R.id.image2);
-        image2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mText.setCursorVisible(true);
-                mText.setFocusable(true);
-                mText.setFocusableInTouchMode(true);
-                mText.requestFocus();
-            }
-        });
 1 想要知道我们的对某个控件焦点的设置有咩有变化，可以通过设置监听焦点改变监听器，重写onFocusChange。
-t
 2.当仅设置setFoucusable时候，在他false后，就再也不能获得它的焦点了。也就是从此失去了焦点，例如下面的 ，如果都把去掉，点击image2 再也不会去打印focus.
 
 3.当只设置setFocusInTouchmode时候，那么点击image  怎么也不会打印 not focus，也就是再也不能去改变焦点。
