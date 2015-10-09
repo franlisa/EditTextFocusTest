@@ -1,13 +1,16 @@
 # EditTextFocusTest关于EditText获取/失去焦点
  mText =(EditText)findViewById(R.id.searchEdit);
-        mText.setOnFocusChangeListener(new android.view.View.
+ mText.setOnFocusChangeListener(new android.view.View.
                 OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
+                
                     Log.e("fxj", "focused");
+                
                 } else {
                     // 此处为失去焦点时的处理内容
+               
                     Log.e("fxj", "not focused ");
                 }
             }
